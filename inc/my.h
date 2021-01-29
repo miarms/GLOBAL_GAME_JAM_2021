@@ -50,19 +50,25 @@ typedef struct s_window {
     sfVector2f poshtp;
     sfIntRect rect_htp;
 
-    sfSprite *s_sol;
-    sfTexture *t_sol;
-    sfVector2f pos_sol;
-
 } t_window;
 
 typedef struct s_game {
     sfRenderWindow *window;
     sfVector2f posmouse;
     sfEvent event;
+    //SOL
     sfSprite *s_sol;
     sfTexture *t_sol;
     sfVector2f pos_sol;
+    //BATIMENT
+    sfSprite *s_batiment;
+    sfTexture *t_batiment;
+    sfVector2f pos_batiment;
+    //CIEL
+    sfSprite *s_ciel;
+    sfTexture *t_ciel;
+    sfVector2f pos_ciel;
+
 } t_game;
 
 sfIntRect fc_rect(int top, int left, int width, int height);
