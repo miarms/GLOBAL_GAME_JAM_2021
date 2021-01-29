@@ -7,7 +7,7 @@ t_window init_sprite_menu(t_window s_window)
     s_window.slogo = sfSprite_create();
     s_window.splay = sfSprite_create();
     s_window.squit = sfSprite_create();
-    //s_window.shtp = sfSprite_create();
+    s_window.shtp = sfSprite_create();
     return (s_window);
 }
 
@@ -21,8 +21,8 @@ t_window init_texture_menu(t_window s_window)
     sfSprite_setTexture(s_window.splay, s_window.tplay, sfTrue);
     s_window.tquit = sfTexture_createFromFile("ressources/img/menu/quit.png", NULL);
     sfSprite_setTexture(s_window.squit, s_window.tquit, sfTrue);
-    //s_window.thtp = sfTexture_createFromFile("ressources/img/menu/htp.png", NULL);
-    //sfSprite_setTexture(s_window.shtp, s_window.thtp, sfTrue);
+    s_window.thtp = sfTexture_createFromFile("ressources/img/menu/htp.png", NULL);
+    sfSprite_setTexture(s_window.shtp, s_window.thtp, sfTrue);
     return (s_window);
 }
 
@@ -36,8 +36,8 @@ t_window init_pos_menu(t_window s_window)
     sfSprite_setPosition(s_window.splay, s_window.posplay);
     s_window.posquit = fc_pos(1000,550);
     sfSprite_setPosition(s_window.squit, s_window.posquit);
-    //s_window.poshtp = fc_pos(200,550);
-    //sfSprite_setPosition(s_window.shtp, s_window.poshtp);
+    s_window.poshtp = fc_pos(250,550);
+    sfSprite_setPosition(s_window.shtp, s_window.poshtp);
     return (s_window);
 }
 
@@ -48,14 +48,14 @@ void draw_sprite(t_window s_window)
     sfRenderWindow_drawSprite(s_window.window, s_window.slogo, NULL);
     sfRenderWindow_drawSprite(s_window.window, s_window.splay, NULL);
     sfRenderWindow_drawSprite(s_window.window, s_window.squit, NULL);
-    //sfRenderWindow_drawSprite(s_window.window, s_window.shtp, NULL);
+    sfRenderWindow_drawSprite(s_window.window, s_window.shtp, NULL);
 }
 
 t_window init_menu(t_window s_window)
 {
     sfVideoMode mode = {1600, 900, 32};
     s_window.window = sfRenderWindow_create(mode, "Lost&Found",\
-     sfClose | sfResize, NULL);
+    sfClose | sfResize, NULL);
     s_window = init_sprite_menu(s_window);
     s_window = init_texture_menu(s_window);
     s_window = init_pos_menu(s_window);
@@ -63,7 +63,7 @@ t_window init_menu(t_window s_window)
     sfSprite_setTextureRect(s_window.splay, s_window.rect_play);
     s_window.rect_quit = fc_rect(0, 0, 300, 80);
     sfSprite_setTextureRect(s_window.squit, s_window.rect_quit);
-    //s_window.rect_htp = fc_rect(0, 0, 300, 80);
-    //sfSprite_setTextureRect(s_window.shtp, s_window.rect_htp);
+    s_window.rect_htp = fc_rect(0, 0, 300, 80);
+    sfSprite_setTextureRect(s_window.shtp, s_window.rect_htp);
     return (s_window);
 }
