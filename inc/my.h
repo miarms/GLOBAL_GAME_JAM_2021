@@ -71,6 +71,12 @@ typedef struct s_game {
 
 } t_game;
 
+typedef struct s_perso {
+
+    
+
+} t_perso;
+
 sfIntRect fc_rect(int top, int left, int width, int height);
 sfVector2f fc_pos(int x, int y);
 t_window get_mouse(t_window s_window);
@@ -94,5 +100,8 @@ t_game init_map(t_game s_game, t_window s_window);
 t_game init_texture_map(t_game s_game);
 t_game init_sprite_map(t_game s_game);
 void draw_sprite_map(t_game sgame);
+
+/*PERSO*/
+t_perso init_perso(t_perso s_perso);
 
 #endif
