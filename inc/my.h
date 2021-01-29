@@ -56,6 +56,15 @@ typedef struct s_window {
 
 } t_window;
 
+typedef struct s_game {
+    sfRenderWindow *window;
+    sfVector2f posmouse;
+    sfEvent event;
+    sfSprite *s_sol;
+    sfTexture *t_sol;
+    sfVector2f pos_sol;
+} t_game;
+
 sfIntRect fc_rect(int top, int left, int width, int height);
 sfVector2f fc_pos(int x, int y);
 t_window get_mouse(t_window s_window);
@@ -71,13 +80,13 @@ t_window init_menu(t_window s_window);
 void draw_sprite_menu(t_window s_window);
 t_window click_menu_play(t_window s_window);
 t_window click_menu_quit(t_window s_window);
+t_window click_menu_htp(t_window s_window);
 void menu();
 
 /*MAP*/
-t_window init_map(t_window s_window);
-t_window init_sprite_map(t_window s_window);
-t_window init_texture_map(t_window s_window);
-t_window init_pos_map(t_window s_window);
-void draw_sprite_map(t_window s_window);
+t_game init_map(t_game s_game, t_window s_window);
+t_game init_texture_map(t_game s_game);
+t_game init_sprite_map(t_game s_game);
+void draw_sprite_map(t_game sgame);
 
 #endif

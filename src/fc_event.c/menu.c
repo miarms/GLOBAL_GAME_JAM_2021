@@ -4,7 +4,7 @@
 void menu()
 {   
     t_window s_window = init_menu(s_window);
-    s_window = init_map(s_window);
+    t_game s_game = init_map(s_game, s_window);
     
     while (sfRenderWindow_isOpen(s_window.window)) {
         s_window = get_mouse(s_window);
@@ -12,7 +12,9 @@ void menu()
         sfRenderWindow_display(s_window.window);
         draw_sprite_menu(s_window);
         s_window = click_menu_play(s_window);
-        //s_window = click_menu_quit(s_window);
+        s_window = click_menu_quit(s_window);
+        s_window = click_menu_htp(s_window);
+
         while (sfRenderWindow_pollEvent(s_window.window, & s_window.event)) {
             close_window(s_window.window, s_window.event);
         }

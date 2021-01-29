@@ -9,6 +9,7 @@ SRCS	= ./lib/get_mouse.c \
 	  ./main.c \
 	  ./src/fc_event.c/click_menu.c \
 	  ./src/fc_event.c/menu.c \
+	  ./src/fc_event.c/map.c \
 	  ./src/fc_event.c/rect.c \
 	  ./src/fc_init/init_clock.c \
 	  ./src/fc_init/init_menu.c \
