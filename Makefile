@@ -4,10 +4,14 @@ CC	= gcc -g3 -l csfml-graphics -l csfml-system -l csfml-window -l csfml-audio
 
 RM	= rm -f
 
-SRCS	= ./main.c \
-		./lib/help_dev.c \
-	  ./src/fc_init/init_menu.c \
-	  ./src/menu.c 
+SRCS	= ./lib/get_mouse.c \
+	  ./lib/help_dev.c \
+	  ./main.c \
+	  ./src/fc_event.c/click_menu.c \
+	  ./src/fc_event.c/menu.c \
+	  ./src/fc_event.c/rect.c \
+	  ./src/fc_init/init_clock.c \
+	  ./src/fc_init/init_menu.c 
 
 OBJS	= $(SRCS:.c=.o)
 

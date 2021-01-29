@@ -44,6 +44,7 @@ typedef struct s_window {
     sfTexture *tquit;
     sfVector2f posquit;
     sfIntRect rect_quit;
+
     sfSprite *shtp;
     sfTexture *thtp;
     sfVector2f poshtp;
@@ -52,14 +53,18 @@ typedef struct s_window {
 
 sfIntRect fc_rect(int top, int left, int width, int height);
 sfVector2f fc_pos(int x, int y);
+t_window get_mouse(t_window s_window);
 void close_window(sfRenderWindow *window, sfEvent event);
 t_window init_clock(t_window s_window);
+t_window move_rect_all(t_window s_window);
 
 /*MENU*/
 t_window init_sprite_menu(t_window s_window);
 t_window init_texture_menu(t_window s_window);
 t_window init_pos_menu(t_window s_window);
-void draw_sprite(t_window s_window);
 t_window init_menu(t_window s_window);
+void draw_sprite_menu(t_window s_window);
+t_window click_menu_play(t_window s_window);
+t_window click_menu_quit(t_window s_window);
 void menu();
 #endif
