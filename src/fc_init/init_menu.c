@@ -43,7 +43,7 @@ t_window init_pos_menu(t_window s_window)
 
 void draw_sprite_menu(t_window s_window)
 {   
-    //sfRenderWindow_clear(s_window.window, sfBlack);
+    sfRenderWindow_clear(s_window.window, sfBlack);
     sfRenderWindow_drawSprite(s_window.window, s_window.smenu, NULL);
     sfRenderWindow_drawSprite(s_window.window, s_window.slogo, NULL);
     sfRenderWindow_drawSprite(s_window.window, s_window.splay, NULL);

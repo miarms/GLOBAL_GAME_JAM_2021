@@ -49,6 +49,11 @@ typedef struct s_window {
     sfTexture *thtp;
     sfVector2f poshtp;
     sfIntRect rect_htp;
+
+    sfSprite *s_sol;
+    sfTexture *t_sol;
+    sfVector2f pos_sol;
+
 } t_window;
 
 sfIntRect fc_rect(int top, int left, int width, int height);
@@ -67,4 +72,12 @@ void draw_sprite_menu(t_window s_window);
 t_window click_menu_play(t_window s_window);
 t_window click_menu_quit(t_window s_window);
 void menu();
+
+/*MAP*/
+t_window init_map(t_window s_window);
+t_window init_sprite_map(t_window s_window);
+t_window init_texture_map(t_window s_window);
+t_window init_pos_map(t_window s_window);
+void draw_sprite_map(t_window s_window);
+
 #endif
