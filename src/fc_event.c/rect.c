@@ -55,13 +55,37 @@ t_window move_rect_all(t_window s_window)
     return (s_window);
 }
 
+t_game init_rect_perso(t_game s_game)
+{
+    if (s_game.secgame_perso > 0 && s_game.secgame_perso < 2)
+        s_game.rect_perso.left = 0;
+    if (s_game.secgame_perso > 2 && s_game.secgame_perso < 4)
+        s_game.rect_perso.left = 147;
+    if (s_game.secgame_perso > 4 && s_game.secgame_perso < 6)
+        s_game.rect_perso.left = 295;
+    if (s_game.secgame_perso > 6 && s_game.secgame_perso < 8)
+        s_game.rect_perso.left = 443;
+    if (s_game.secgame_perso > 8 && s_game.secgame_perso < 10)
+        s_game.rect_perso.left = 590;
+    if (s_game.secgame_perso > 10 && s_game.secgame_perso < 12)
+        s_game.rect_perso.left = 738;
+    if (s_game.secgame_perso > 12 && s_game.secgame_perso < 14)
+        s_game.rect_perso.left = 885;
+    if (s_game.secgame_perso > 14 && s_game.secgame_perso < 16)
+        s_game.rect_perso.left = 1034;
+    if (s_game.secgame_perso > 16)
+        sfClock_restart(s_game.timer_perso);
+    return (s_game);
+}
+
 t_game move_rect_map(t_game s_game)
 {
-    if (s_game.check_pause == 1) {
+     if (s_game.check_pause == 1) {
         sfSprite_setTextureRect(s_game.s_pause_play, s_game.rect_pause_play);
         sfSprite_setTextureRect(s_game.s_pause_quit, s_game.rect_pause_quit);
         sfSprite_setTextureRect(s_game.s_pause_replay, s_game.rect_pause_replay);
     }
-
+    sfSprite_setTextureRect(s_game.sperso, s_game.rect_perso);
+    s_game = init_rect_perso(s_game);
     return (s_game);
 }

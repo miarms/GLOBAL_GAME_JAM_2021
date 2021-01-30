@@ -8,3 +8,10 @@ t_intro init_clock_intro(t_intro s_intro)
     s_intro.secgame_intro = s_intro.timergame_intro.microseconds / 100000.0;
     return (s_intro);
 }
+
+t_game init_clock_perso(t_game s_game)
+{
+    s_game.timergame_perso = sfClock_getElapsedTime(s_game.timer_perso);
+    s_game.secgame_perso = s_game.timergame_perso.microseconds / 100000.0;
+    return (s_game);
+}

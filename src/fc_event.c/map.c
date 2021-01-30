@@ -26,6 +26,7 @@ void map(t_window s_window)
     while (sfRenderWindow_isOpen(s_game.window)) {
         s_game = get_mouse_map(s_game); 
         //s_game = init_clock_map(s_game);
+        s_game = init_clock_perso(s_game);
         sfRenderWindow_display(s_game.window);
         draw_sprite_map(s_game);
         if(sfKeyboard_isKeyPressed(sfKeyEscape))
