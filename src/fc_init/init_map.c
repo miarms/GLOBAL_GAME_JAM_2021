@@ -12,6 +12,7 @@ t_game init_sprite_map(t_game s_game)
     s_game.s_ciel = sfSprite_create();
     s_game.s_batiment = sfSprite_create();
     s_game.s_sol = sfSprite_create();
+    //PERSO
     s_game.sperso = sfSprite_create();
     //PAUSE
     s_game.s_pause = sfSprite_create();
@@ -31,7 +32,7 @@ t_game init_texture_map(t_game s_game)
     sfSprite_setTexture(s_game.s_batiment, s_game.t_batiment, sfTrue);
     s_game.t_sol = sfTexture_createFromFile("ressources/img/map/sol.png", NULL);
     sfSprite_setTexture(s_game.s_sol, s_game.t_sol, sfTrue);
-
+    //PERSO
     s_game.tperso = sfTexture_createFromFile("ressources/img/map/perso.png", NULL);
     sfSprite_setTexture(s_game.sperso, s_game.tperso, sfTrue);
 
@@ -57,9 +58,10 @@ t_game init_pos_map(t_game s_game)
     sfSprite_setPosition(s_game.s_batiment, s_game.pos_batiment);
     s_game.pos_sol = fc_pos(0,30);
     sfSprite_setPosition(s_game.s_sol, s_game.pos_sol);
+    //PERSO
     s_game.posperso = fc_pos(60,700);
     sfSprite_setPosition(s_game.sperso, s_game.posperso);
-
+    //PAUSE
     s_game.pos_pause = fc_pos(0,0);
     sfSprite_setPosition(s_game.s_pause, s_game.pos_pause);
     s_game.pos_pause_play = fc_pos(650,330);
@@ -108,6 +110,9 @@ t_game init_rect_map(t_game s_game)
 
 t_game init_map(t_game s_game, t_window s_window)
 {
+    s_game.clock_jump = sfClock_create();
+    s_game.ct_jump = 1;
+
     s_game.check_pause = 0;
     s_game.window = s_window.window;
     s_game.posmouse = s_window.posmouse;

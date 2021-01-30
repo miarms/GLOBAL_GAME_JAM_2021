@@ -11,6 +11,7 @@ SRCS	= ./lib/get_mouse.c \
 	  ./src/fc_event.c/click_menu.c \
 	  ./src/fc_event.c/intro.c \
 	  ./src/fc_event.c/map.c \
+	  ./src/fc_event.c/perso.c \
 	  ./src/fc_event.c/menu.c \
 	  ./src/fc_event.c/rect.c \
 	  ./src/fc_init/init_clock.c \

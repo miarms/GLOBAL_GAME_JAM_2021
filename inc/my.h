@@ -89,6 +89,7 @@ typedef struct s_game {
     sfSprite *s_ciel;
     sfTexture *t_ciel;
     sfVector2f pos_ciel;
+    //PERSO
     sfSprite *sperso;
     sfTexture *tperso;
     sfVector2f posperso;
@@ -96,6 +97,11 @@ typedef struct s_game {
     sfClock *timer_perso;
     sfTime timergame_perso;
     float secgame_perso;
+    //PERSO JUMP
+    sfClock *clock_jump;
+    sfTime time_jump;
+    float second_jump;
+    int ct_jump;
     //PAUSE
     int check_pause;
     sfSprite *s_pause;
@@ -157,6 +163,7 @@ void draw_sprite_map(t_game sgame);
 t_game init_rect_map(t_game s_game);
 void map(t_window s_window);
 t_game init_clock_perso(t_game s_game);
+t_game jump_perso(t_game s_game);
 t_game get_mouse_map(t_game s_game);
 t_game move_rect_map(t_game s_game);
 t_game move_background(t_game s_game);

@@ -29,7 +29,8 @@ void map(t_window s_window)
         s_game = init_clock_perso(s_game);
         sfRenderWindow_display(s_game.window);
         draw_sprite_map(s_game);
-        if(sfKeyboard_isKeyPressed(sfKeyEscape))
+        s_game = jump_perso(s_game);
+        if (sfKeyboard_isKeyPressed(sfKeyEscape))
             s_game.check_pause = 1;
         s_game = click_pause(s_game);
         while (sfRenderWindow_pollEvent(s_game.window, &s_game.event)) {
