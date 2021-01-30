@@ -176,6 +176,7 @@ t_game jump_perso(t_game s_game);
 t_game get_mouse_map(t_game s_game);
 t_game move_rect_map(t_game s_game);
 t_game move_background(t_game s_game);
+t_game move_memory(t_game s_game);
 t_game click_pause(t_game s_game);
 t_game click_pause_play(t_game s_game);
 t_game click_pause_quit(t_game s_game);

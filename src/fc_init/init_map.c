@@ -70,9 +70,9 @@ t_game init_pos_map(t_game s_game)
     s_game.posperso = fc_pos(60,700);
     sfSprite_setPosition(s_game.sperso, s_game.posperso);
     //MEMORY
-    s_game.poshappy = fc_pos(0,0);
+    s_game.poshappy = fc_pos(1600,615);
     sfSprite_setPosition(s_game.shappy, s_game.poshappy);
-    s_game.possad = fc_pos(100,0);
+    s_game.possad = fc_pos(1800,615);
     sfSprite_setPosition(s_game.ssad, s_game.possad);
     //PAUSE
     s_game.pos_pause = fc_pos(0,0);
