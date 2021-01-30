@@ -10,7 +10,6 @@
 void map(t_window s_window)
 {
     t_game s_game = init_map(s_game, s_window);
-    t_perso s_perso = init_perso(s_perso);
 
     while (sfRenderWindow_isOpen(s_game.window)) {
         //s_game = get_mouse_map(s_game); 

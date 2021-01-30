@@ -89,14 +89,11 @@ typedef struct s_game {
     sfSprite *s_ciel;
     sfTexture *t_ciel;
     sfVector2f pos_ciel;
-
+    sfSprite *sperso;
+    sfTexture *tperso;
+    sfVector2f posperso;
+    sfIntRect rect_perso;
 } t_game;
-
-typedef struct s_perso {
-
-    
-
-} t_perso;
 
 sfIntRect fc_rect(int top, int left, int width, int height);
 sfVector2f fc_pos(int x, int y);
@@ -135,6 +132,5 @@ t_game init_sprite_map(t_game s_game);
 void draw_sprite_map(t_game sgame);
 void map(t_window s_window);
 /*PERSO*/
-t_perso init_perso(t_perso s_perso);
 
 #endif
