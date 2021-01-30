@@ -93,6 +93,27 @@ typedef struct s_game {
     sfTexture *tperso;
     sfVector2f posperso;
     sfIntRect rect_perso;
+    //PAUSE
+    int check_pause;
+    sfSprite *s_pause;
+    sfTexture *t_pause;
+    sfVector2f pos_pause;
+    //BUTTOM PLAY OF PAUSE
+    sfSprite *s_pause_play;
+    sfTexture *t_pause_play;
+    sfVector2f pos_pause_play;
+    sfIntRect rect_pause_play;
+    //BUTTOM QUIT OF PAUSE
+    sfSprite *s_pause_quit;
+    sfTexture *t_pause_quit;
+    sfVector2f pos_pause_quit;
+    sfIntRect rect_pause_quit;
+    //BUTTOM REPLAY OF PAUSE
+    sfSprite *s_pause_replay;
+    sfTexture *t_pause_replay;
+    sfVector2f pos_pause_replay;
+    sfIntRect rect_pause_replay;
+
 } t_game;
 
 sfIntRect fc_rect(int top, int left, int width, int height);
@@ -130,7 +151,15 @@ t_game init_map(t_game s_game, t_window s_window);
 t_game init_texture_map(t_game s_game);
 t_game init_sprite_map(t_game s_game);
 void draw_sprite_map(t_game sgame);
+t_game init_rect_map(t_game s_game);
 void map(t_window s_window);
+t_game get_mouse_map(t_game s_game);
+t_game move_rect_map(t_game s_game);
+t_game move_background(t_game s_game);
+t_game click_pause(t_game s_game);
+t_game click_pause_play(t_game s_game);
+t_game click_pause_quit(t_game s_game);
+t_game click_pause_replay(t_game s_game);
 /*PERSO*/
 
 #endif

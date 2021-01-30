@@ -54,3 +54,14 @@ t_window move_rect_all(t_window s_window)
     sfSprite_setTextureRect(s_window.shtp, s_window.rect_htp);
     return (s_window);
 }
+
+t_game move_rect_map(t_game s_game)
+{
+    if (s_game.check_pause == 1) {
+        sfSprite_setTextureRect(s_game.s_pause_play, s_game.rect_pause_play);
+        sfSprite_setTextureRect(s_game.s_pause_quit, s_game.rect_pause_quit);
+        sfSprite_setTextureRect(s_game.s_pause_replay, s_game.rect_pause_replay);
+    }
+
+    return (s_game);
+}

@@ -20,10 +20,11 @@ t_intro get_mouse_intro(t_intro s_intro)
     s_intro.posmouse.y = sfMouse_getPositionRenderWindow(s_intro.window).y;
     return (s_intro);
 }
-/*
-t_map2 get_mouse_map2(t_map2 s_map2)
+
+t_game get_mouse_map(t_game s_game)
 {
-    s_map2.posmouse.x = sfMouse_getPositionRenderWindow(s_map2.window).x;
-    s_map2.posmouse.y = sfMouse_getPositionRenderWindow(s_map2.window).y;
-    return (s_map2);
-}*/
+    s_game.posmouse.x = sfMouse_getPositionRenderWindow(s_game.window).x;
+    s_game.posmouse.y = sfMouse_getPositionRenderWindow(s_game.window).y;
+
+    return (s_game);
+}
