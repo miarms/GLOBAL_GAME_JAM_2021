@@ -65,13 +65,13 @@ t_game init_pos_map(t_game s_game)
     s_game.pos_pause = fc_pos(0,0);
     sfSprite_setPosition(s_game.s_pause, s_game.pos_pause);
 
-    s_game.pos_pause_play = fc_pos(650,320);
+    s_game.pos_pause_play = fc_pos(650,330);
     sfSprite_setPosition(s_game.s_pause_play, s_game.pos_pause_play);
 
-    s_game.pos_pause_quit = fc_pos(650,450);
+    s_game.pos_pause_quit = fc_pos(650,600);
     sfSprite_setPosition(s_game.s_pause_quit, s_game.pos_pause_quit);
 
-    s_game.pos_pause_replay = fc_pos(650,550);
+    s_game.pos_pause_replay = fc_pos(650,470);
     sfSprite_setPosition(s_game.s_pause_replay, s_game.pos_pause_replay);
 
     return (s_game);
@@ -91,6 +91,7 @@ void draw_sprite_map(t_game s_game)
         sfRenderWindow_drawSprite(s_game.window, s_game.s_pause, NULL);
         sfRenderWindow_drawSprite(s_game.window, s_game.s_pause_play, NULL);
         sfRenderWindow_drawSprite(s_game.window, s_game.s_pause_quit, NULL);
+        sfRenderWindow_drawSprite(s_game.window, s_game.s_pause_replay, NULL);
     }
 }
 
