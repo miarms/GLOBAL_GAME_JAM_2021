@@ -102,6 +102,15 @@ typedef struct s_game {
     sfTime time_jump;
     float second_jump;
     int ct_jump;
+    //MEMORY
+    sfSprite *shappy;
+    sfTexture *thappy;
+    sfVector2f poshappy;
+    sfIntRect rect_happy;
+    sfSprite *ssad;
+    sfTexture *tsad;
+    sfVector2f possad;
+    sfIntRect rect_sad;
     //PAUSE
     int check_pause;
     sfSprite *s_pause;

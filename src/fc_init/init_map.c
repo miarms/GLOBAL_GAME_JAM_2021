@@ -14,6 +14,10 @@ t_game init_sprite_map(t_game s_game)
     s_game.s_sol = sfSprite_create();
     //PERSO
     s_game.sperso = sfSprite_create();
+    //MEMORY
+    s_game.shappy = sfSprite_create();
+    s_game.ssad = sfSprite_create();
+
     //PAUSE
     s_game.s_pause = sfSprite_create();
     s_game.s_pause_play = sfSprite_create();
@@ -35,7 +39,11 @@ t_game init_texture_map(t_game s_game)
     //PERSO
     s_game.tperso = sfTexture_createFromFile("ressources/img/map/perso.png", NULL);
     sfSprite_setTexture(s_game.sperso, s_game.tperso, sfTrue);
-
+    //MEMORY
+    s_game.thappy = sfTexture_createFromFile("ressources/img/map/happy.png", NULL);
+    sfSprite_setTexture(s_game.shappy, s_game.thappy, sfTrue);
+    s_game.tsad = sfTexture_createFromFile("ressources/img/map/sad.png", NULL);
+    sfSprite_setTexture(s_game.ssad, s_game.tsad, sfTrue);
     //PAUSE
     s_game.t_pause = sfTexture_createFromFile("ressources/img/pause/pause.png", NULL);
     sfSprite_setTexture(s_game.s_pause, s_game.t_pause, sfTrue);
@@ -61,6 +69,11 @@ t_game init_pos_map(t_game s_game)
     //PERSO
     s_game.posperso = fc_pos(60,700);
     sfSprite_setPosition(s_game.sperso, s_game.posperso);
+    //MEMORY
+    s_game.poshappy = fc_pos(0,0);
+    sfSprite_setPosition(s_game.shappy, s_game.poshappy);
+    s_game.possad = fc_pos(100,0);
+    sfSprite_setPosition(s_game.ssad, s_game.possad);
     //PAUSE
     s_game.pos_pause = fc_pos(0,0);
     sfSprite_setPosition(s_game.s_pause, s_game.pos_pause);
@@ -72,7 +85,7 @@ t_game init_pos_map(t_game s_game)
     sfSprite_setPosition(s_game.s_pause_replay, s_game.pos_pause_replay);
 
     return (s_game);
-}
+} 
 
 void draw_sprite_map(t_game s_game)
 {
@@ -81,6 +94,9 @@ void draw_sprite_map(t_game s_game)
         sfRenderWindow_drawSprite(s_game.window, s_game.s_batiment, NULL);
         sfRenderWindow_drawSprite(s_game.window, s_game.s_sol, NULL);
         sfRenderWindow_drawSprite(s_game.window, s_game.sperso, NULL);
+        sfRenderWindow_drawSprite(s_game.window, s_game.shappy, NULL);
+        sfRenderWindow_drawSprite(s_game.window, s_game.ssad, NULL);
+
     } else if (s_game.check_pause == 1) {
         sfRenderWindow_clear(s_game.window, sfBlack);
         sfRenderWindow_drawSprite(s_game.window, s_game.s_ciel, NULL);
