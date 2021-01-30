@@ -63,6 +63,13 @@ typedef struct s_intro  {
     sfClock *timer_intro;
     sfTime timergame_intro;
     float secgame_intro;
+    sfSprite *sskip;
+    sfTexture *tskip;
+    sfVector2f posskip;
+    sfIntRect rect_skip;
+    sfClock *timer_skip;
+    sfTime timergame_skip;
+    float secgame_skip;
 } t_intro;
 
 
@@ -110,6 +117,7 @@ t_window click_menu_htp(t_window s_window);
 void menu();
 
 /*INTRO*/
+t_intro get_mouse_intro(t_intro s_intro);
 t_intro init_sprite_intro(t_intro s_intro);
 t_intro init_texture_intro(t_intro s_intro);
 t_intro init_pos_intro(t_intro s_intro);
@@ -119,14 +127,13 @@ t_intro init_clock_intro(t_intro s_intro);
 t_intro move_rect_intro(t_intro s_intro);
 void draw_sprite_intro(t_intro s_intro);
 void intro(t_window s_window);
-
-
+t_intro click_skip(t_intro s_intro, t_window s_window);
 /*MAP*/
 t_game init_map(t_game s_game, t_window s_window);
 t_game init_texture_map(t_game s_game);
 t_game init_sprite_map(t_game s_game);
 void draw_sprite_map(t_game sgame);
-
+void map(t_window s_window);
 /*PERSO*/
 t_perso init_perso(t_perso s_perso);
 

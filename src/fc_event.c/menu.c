@@ -4,7 +4,6 @@
 void menu()
 {   
     t_window s_window = init_menu(s_window);
-    t_game s_game = init_map(s_game, s_window);
     
     while (sfRenderWindow_isOpen(s_window.window)) {
         s_window = get_mouse(s_window);

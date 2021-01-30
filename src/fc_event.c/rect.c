@@ -31,14 +31,17 @@ t_intro init_rect_intro(t_intro s_intro)
         s_intro.rect_intro.left = 6702;
     if (s_intro.secgame_intro > 20 && s_intro.secgame_intro < 22)
         s_intro.rect_intro.left = 7447;
-    if (s_intro.secgame_intro > 22)
+    if (s_intro.secgame_intro > 22) {
+        
         sfClock_restart(s_intro.timer_intro);
+    }
     return (s_intro);
 }
 
 t_intro move_rect_intro(t_intro s_intro)
 {
     sfSprite_setTextureRect(s_intro.sintro, s_intro.rect_intro);    
+    sfSprite_setTextureRect(s_intro.sskip, s_intro.rect_skip);
     s_intro = init_rect_intro(s_intro);
     
     return (s_intro);
