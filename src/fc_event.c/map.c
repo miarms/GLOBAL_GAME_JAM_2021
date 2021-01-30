@@ -20,14 +20,18 @@ t_game move_background(t_game s_game)
 }
 
 t_game move_memory(t_game s_game)
-{
-    sfSprite_setPosition(s_game.shappy, s_game.poshappy);
-    s_game.poshappy.x = s_game.poshappy.x - 3;
+{   
+    int i = 0;
+    while (i < 5) {
+        sfSprite_setPosition(s_game.shappy, s_game.poshappy);
+        i++;
+    }
+     s_game.poshappy.x = s_game.poshappy.x - 4;
     if (s_game.poshappy.x < -1600) {
         s_game.poshappy.x = 1600;
     }
     sfSprite_setPosition(s_game.ssad, s_game.possad);
-    s_game.possad.x = s_game.possad.x - 4;
+    s_game.possad.x = s_game.possad.x - 3;
     if (s_game.possad.x < -1600) {
         s_game.possad.x = 1600;
     }
@@ -37,7 +41,7 @@ t_game move_memory(t_game s_game)
 void map(t_window s_window)
 {
     t_game s_game = init_map(s_game, s_window);
-
+    t_memory s_memory = init_memory(s_memory, s_window);
     while (sfRenderWindow_isOpen(s_game.window)) {
         s_game = get_mouse_map(s_game); 
         //s_game = init_clock_map(s_game);
@@ -54,5 +58,8 @@ void map(t_window s_window)
         s_game = move_rect_map(s_game);
         s_game = move_background(s_game);
         s_game = move_memory(s_game);
+        draw_sprite_memory(s_memory);
+        s_memory = move_memory_others(s_memory);
+
     }
 }

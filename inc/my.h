@@ -134,6 +134,30 @@ typedef struct s_game {
 
 } t_game;
 
+typedef struct s_memory {
+    sfRenderWindow *window;
+    sfVector2f posmouse;
+    sfEvent event;
+    int check_pause;
+    sfSprite *shappy1;
+    sfTexture *thappy1;
+    sfVector2f poshappy1;
+    sfIntRect rect_happy1;
+    sfSprite *ssad1;
+    sfTexture *tsad1;
+    sfVector2f possad1;
+    sfIntRect rect_sad1;
+    sfSprite *shappy2;
+    sfTexture *thappy2;
+    sfVector2f poshappy2;
+    sfIntRect rect_happy2;
+    sfSprite *ssad2;
+    sfTexture *tsad2;
+    sfVector2f possad2;
+    sfIntRect rect_sad2;
+
+} t_memory;
+
 sfIntRect fc_rect(int top, int left, int width, int height);
 sfVector2f fc_pos(int x, int y);
 t_window get_mouse(t_window s_window);
@@ -181,6 +205,11 @@ t_game click_pause(t_game s_game);
 t_game click_pause_play(t_game s_game);
 t_game click_pause_quit(t_game s_game);
 t_game click_pause_replay(t_game s_game);
-/*PERSO*/
-
+/*MEMORY*/
+t_memory init_sprite_memory(t_memory s_memory);
+t_memory init_texture_memory(t_memory s_memory);
+t_memory init_pos_memory(t_memory s_memory);
+void draw_sprite_memory(t_memory s_memory);
+t_memory init_memory(t_memory s_memory, t_window s_window);
+t_memory move_memory_others(t_memory s_memory);
 #endif
