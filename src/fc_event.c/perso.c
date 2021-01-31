@@ -8,15 +8,27 @@ t_game jump_perso(t_game s_game)
         s_game.ct_jump = 0;
         s_game.posperso.y = 615;
         sfSprite_setPosition(s_game.sperso, s_game.posperso);
+        s_game.pos_halo_blue = fc_pos(s_game.posperso.x, s_game.posperso.y);
+        sfSprite_setPosition(s_game.s_halo_blue, s_game.pos_halo_blue);
+        s_game.pos_halo_orange = fc_pos(s_game.posperso.x, s_game.posperso.y);
+        sfSprite_setPosition(s_game.s_halo_orange, s_game.pos_halo_orange);
     }
     if (s_game.second_jump > 0 && s_game.second_jump < 2) {
         s_game.posperso.y = 615;
         sfSprite_setPosition(s_game.sperso, s_game.posperso);
+        s_game.pos_halo_blue = fc_pos(s_game.posperso.x, s_game.posperso.y);
+        sfSprite_setPosition(s_game.s_halo_blue, s_game.pos_halo_blue);
+        s_game.pos_halo_orange = fc_pos(s_game.posperso.x, s_game.posperso.y);
+        sfSprite_setPosition(s_game.s_halo_orange, s_game.pos_halo_orange);
     }
 
     if ((s_game.second_jump > 2 && s_game.second_jump < 3) && s_game.posperso.y == 615) {
         s_game.posperso.y = 700; 
         sfSprite_setPosition(s_game.sperso, s_game.posperso);
+        s_game.pos_halo_blue = fc_pos(s_game.posperso.x, s_game.posperso.y);
+        sfSprite_setPosition(s_game.s_halo_blue, s_game.pos_halo_blue);
+        s_game.pos_halo_orange = fc_pos(s_game.posperso.x, s_game.posperso.y);
+        sfSprite_setPosition(s_game.s_halo_orange, s_game.pos_halo_orange);
         s_game.ct_jump = 1;
     }
     return (s_game);
