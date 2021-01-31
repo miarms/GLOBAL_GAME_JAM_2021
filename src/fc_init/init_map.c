@@ -20,13 +20,16 @@ t_game init_sprite_map(t_game s_game)
     //MEMORY
     s_game.shappy = sfSprite_create();
     s_game.ssad = sfSprite_create();
-
     //PAUSE
     s_game.s_pause = sfSprite_create();
     s_game.s_pause_play = sfSprite_create();
     s_game.s_pause_quit = sfSprite_create();
     s_game.s_pause_replay = sfSprite_create();
-
+    //END
+    s_game.s_end_none = sfSprite_create();
+    s_game.s_end_happy = sfSprite_create();
+    s_game.s_end_sad = sfSprite_create();
+    s_game.s_end_egal = sfSprite_create();
     return (s_game);
 }
 
@@ -47,7 +50,6 @@ t_game init_texture_map(t_game s_game)
     sfSprite_setTexture(s_game.s_halo_blue, s_game.t_halo_blue, sfTrue);
     s_game.t_halo_orange = sfTexture_createFromFile("ressources/img/map/halo_orange.png", NULL);
     sfSprite_setTexture(s_game.s_halo_orange, s_game.t_halo_orange, sfTrue);
-
     //MEMORY
     s_game.thappy = sfTexture_createFromFile("ressources/img/map/happy.png", NULL);
     sfSprite_setTexture(s_game.shappy, s_game.thappy, sfTrue);
@@ -62,7 +64,15 @@ t_game init_texture_map(t_game s_game)
     sfSprite_setTexture(s_game.s_pause_quit, s_game.t_pause_quit, sfTrue);
     s_game.t_pause_replay = sfTexture_createFromFile("ressources/img/menu/replay.png", NULL);
     sfSprite_setTexture(s_game.s_pause_replay, s_game.t_pause_replay, sfTrue);
-
+    //END
+    s_game.t_end_none = sfTexture_createFromFile("ressources/img/end/none.png", NULL);
+    sfSprite_setTexture(s_game.s_end_none, s_game.t_end_none, sfTrue);
+    s_game.t_end_happy = sfTexture_createFromFile("ressources/img/end/happy_end.png", NULL);
+    sfSprite_setTexture(s_game.s_end_happy, s_game.t_end_happy, sfTrue);
+    s_game.t_end_sad = sfTexture_createFromFile("ressources/img/end/sad_end.png", NULL);
+    sfSprite_setTexture(s_game.s_end_sad, s_game.t_end_sad, sfTrue);
+    s_game.t_end_egal = sfTexture_createFromFile("ressources/img/end/100.png", NULL);
+    sfSprite_setTexture(s_game.s_end_egal, s_game.t_end_egal, sfTrue);
     return (s_game);
 }
 
@@ -97,7 +107,15 @@ t_game init_pos_map(t_game s_game)
     sfSprite_setPosition(s_game.s_pause_quit, s_game.pos_pause_quit);
     s_game.pos_pause_replay = fc_pos(650,470);
     sfSprite_setPosition(s_game.s_pause_replay, s_game.pos_pause_replay);
-
+    //END
+    s_game.pos_end_none = fc_pos(0,0);
+    sfSprite_setPosition(s_game.s_end_none, s_game.pos_end_none);
+    s_game.pos_end_happy = fc_pos(0,0);
+    sfSprite_setPosition(s_game.s_end_happy, s_game.pos_end_happy);
+    s_game.pos_end_sad = fc_pos(0,0);
+    sfSprite_setPosition(s_game.s_end_sad, s_game.pos_end_sad);
+    s_game.pos_end_egal = fc_pos(0,0);
+    sfSprite_setPosition(s_game.s_end_egal, s_game.pos_end_egal);
     return (s_game);
 } 
 

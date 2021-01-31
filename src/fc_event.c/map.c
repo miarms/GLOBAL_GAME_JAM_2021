@@ -10,13 +10,14 @@
 t_game end_compare(t_game s_game)
 {
     if (s_game.happy_moment > s_game.sad_moment)
-        printf("Happy > Sad");
+        sfRenderWindow_drawSprite(s_game.window, s_game.s_end_happy, NULL);
     if (s_game.happy_moment < s_game.sad_moment)
-        printf("Sad > Happy");
+        sfRenderWindow_drawSprite(s_game.window, s_game.s_end_sad, NULL);
     if (s_game.sad_moment == s_game.happy_moment)
-        printf("Happy == Sad");
-    if (s_game.sad_moment == 0 && s_game.happy_moment == 0)
-        printf("You've catch 0 memory");
+        sfRenderWindow_drawSprite(s_game.window, s_game.s_end_egal, NULL);
+    if (s_game.sad_moment == 0 && s_game.happy_moment == 0) {
+        sfRenderWindow_drawSprite(s_game.window, s_game.s_end_none, NULL);
+    }
     return (s_game);
 }
 
@@ -27,8 +28,10 @@ t_game move_background(t_game s_game)
         sfSprite_setPosition(s_game.s_batiment, s_game.pos_batiment);
         s_game.pos_sol.x = s_game.pos_sol.x - 1;
         sfSprite_setPosition(s_game.s_sol, s_game.pos_sol);
-        if (s_game.pos_sol.x < -1600)
+        if (s_game.pos_sol.x < -1600) {
+            sfRenderWindow_clear(s_game.window, sfBlack);
             end_compare(s_game);
+        }
     }
     return (s_game);
 }
@@ -74,9 +77,9 @@ void map(t_window s_window)
             close_window(s_game.window, s_game.event);
         }
         s_game = move_rect_map(s_game);
-        s_game = move_background(s_game);
         s_game = move_memory(s_game);
         draw_sprite_memory(s_memory);
         s_memory = move_memory_others(s_memory);
+        s_game = move_background(s_game);
     }
 }

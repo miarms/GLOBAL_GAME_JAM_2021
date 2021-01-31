@@ -71,8 +71,6 @@ t_game event_perso(t_game s_game, t_memory s_memory)
 {
     s_game = jump_perso(s_game);
     s_game = collision_memory(s_game, s_memory);
-    printf ("Happy : %d\n", s_game.happy_moment);
-    printf ("Sad : %d\n", s_game.sad_moment);
     if (s_game.count_moment_happy == 1) {
         s_game.happy_moment = s_game.happy_moment + 1;
         usleep(55000);

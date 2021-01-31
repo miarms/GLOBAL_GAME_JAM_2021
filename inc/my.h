@@ -124,6 +124,19 @@ typedef struct s_game {
     int sad_moment;
     int count_moment_happy;
     int count_moment_sad;
+    //END
+    sfSprite *s_end_none;
+    sfTexture *t_end_none;
+    sfVector2f pos_end_none;
+    sfSprite *s_end_happy;
+    sfTexture *t_end_happy;
+    sfVector2f pos_end_happy;
+    sfSprite *s_end_egal;
+    sfTexture *t_end_egal;
+    sfVector2f pos_end_egal;
+    sfSprite *s_end_sad;
+    sfTexture *t_end_sad;
+    sfVector2f pos_end_sad;
 
     //PAUSE
     int check_pause;
