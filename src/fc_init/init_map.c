@@ -166,6 +166,7 @@ t_game init_map(t_game s_game, t_window s_window)
 {
     s_game.clock_jump = sfClock_create();
     s_game.ct_jump = 1;
+    s_game.music_game = sfMusic_createFromFile("ressources/sound/music_game.ogg");
 
     s_game.check_halo = 0;
     s_game.check_pause = 0;

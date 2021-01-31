@@ -37,12 +37,14 @@ t_memory init_pos_memory(t_memory s_memory)
     return (s_memory);
 }
 
-void draw_sprite_memory(t_memory s_memory)
+void draw_sprite_memory(t_memory s_memory, t_game s_game)
 {
-    sfRenderWindow_drawSprite(s_memory.window, s_memory.shappy1, NULL);
-    sfRenderWindow_drawSprite(s_memory.window, s_memory.ssad1, NULL);
-    sfRenderWindow_drawSprite(s_memory.window, s_memory.shappy2, NULL);
-    sfRenderWindow_drawSprite(s_memory.window, s_memory.ssad2, NULL);
+    if(s_game.check_pause == 0) {
+        sfRenderWindow_drawSprite(s_memory.window, s_memory.shappy1, NULL);
+        sfRenderWindow_drawSprite(s_memory.window, s_memory.ssad1, NULL);
+        sfRenderWindow_drawSprite(s_memory.window, s_memory.shappy2, NULL);
+        sfRenderWindow_drawSprite(s_memory.window, s_memory.ssad2, NULL);
+    }
 }
 
 t_memory move_memory_others(t_memory s_memory)

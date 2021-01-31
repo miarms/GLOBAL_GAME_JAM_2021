@@ -60,6 +60,7 @@ void map(t_window s_window)
     t_game s_game = init_map(s_game, s_window);
     t_memory s_memory = init_memory(s_memory, s_window);
     
+    sfMusic_play(s_game.music_game);
     s_game.count_moment_happy = 0;
     s_game.happy_moment = 0;
     s_game.sad_moment = 0;
@@ -78,7 +79,7 @@ void map(t_window s_window)
         }
         s_game = move_rect_map(s_game);
         s_game = move_memory(s_game);
-        draw_sprite_memory(s_memory);
+        draw_sprite_memory(s_memory, s_game);
         s_memory = move_memory_others(s_memory);
         s_game = move_background(s_game);
     }

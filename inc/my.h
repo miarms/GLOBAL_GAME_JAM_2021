@@ -50,6 +50,14 @@ typedef struct s_window {
     sfVector2f poshtp;
     sfIntRect rect_htp;
 
+    //HTP BOARD
+    int see_htp;
+    sfSprite *s_htp_board;
+    sfTexture *t_htp_board;
+    sfVector2f pos_htp_board;
+
+    //MUSIC
+    sfMusic *music_menu;
 } t_window;
 
 typedef struct s_intro  {
@@ -78,6 +86,7 @@ typedef struct s_game {
     sfRenderWindow *window;
     sfVector2f posmouse;
     sfEvent event;
+    sfMusic *music_game;
     //SOL
     sfSprite *s_sol;
     sfTexture *t_sol;
@@ -239,7 +248,7 @@ t_game end_compare(t_game s_game);
 t_memory init_sprite_memory(t_memory s_memory);
 t_memory init_texture_memory(t_memory s_memory);
 t_memory init_pos_memory(t_memory s_memory);
-void draw_sprite_memory(t_memory s_memory);
+void draw_sprite_memory(t_memory s_memory, t_game s_game);
 t_memory init_memory(t_memory s_memory, t_window s_window);
 t_memory move_memory_others(t_memory s_memory);
 #endif
