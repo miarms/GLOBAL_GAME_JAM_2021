@@ -70,6 +70,7 @@ typedef struct s_intro  {
     sfClock *timer_skip;
     sfTime timergame_skip;
     float secgame_skip;
+    sfMusic *music_intro;
 } t_intro;
 
 

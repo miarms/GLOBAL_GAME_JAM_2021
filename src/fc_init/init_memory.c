@@ -28,7 +28,6 @@ t_memory init_pos_memory(t_memory s_memory)
 {
     s_memory.poshappy1 = fc_pos(1700,615);
     sfSprite_setPosition(s_memory.shappy1, s_memory.poshappy1);
-    printf("init_pos_memory ok _\n");
     s_memory.possad1 = fc_pos(1870,615);
     sfSprite_setPosition(s_memory.ssad1, s_memory.possad1);
     s_memory.poshappy2 = fc_pos(1900,615);

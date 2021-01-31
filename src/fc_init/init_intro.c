@@ -45,6 +45,8 @@ t_intro init_intro(t_intro s_intro, t_window s_window)
     s_intro.window = s_window.window;
     s_intro.posmouse = s_window.posmouse;
     s_intro.event = s_window.event;
+    s_intro.music_intro = sfMusic_createFromFile("ressources/sound/intro.ogg");
+    sfMusic_play(s_intro.music_intro);
     s_intro = init_sprite_intro(s_intro);
     s_intro = init_texture_intro(s_intro);
     s_intro = init_pos_intro(s_intro);

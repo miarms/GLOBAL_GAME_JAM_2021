@@ -10,6 +10,7 @@ t_intro click_skip(t_intro s_intro, t_window s_window)
     if (sfMouse_isButtonPressed(sfMouseLeft)) {
         if (s_intro.posmouse.x >= s_intro.posskip.x && s_intro.posmouse.x <= s_intro.posskip.x + 100 \
             && s_intro.posmouse.y >= s_intro.posskip.y && s_intro.posmouse.y <= s_intro.posskip.y + 35) {
+            sfMusic_destroy(s_intro.music_intro);
             map(s_window);
         }
     }
