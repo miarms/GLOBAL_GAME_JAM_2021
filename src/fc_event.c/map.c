@@ -47,7 +47,7 @@ void map(t_window s_window)
         //s_game = init_clock_map(s_game);
         s_game = init_clock_perso(s_game);
         sfRenderWindow_display(s_game.window);
-        s_game = event_perso(s_game);
+        s_game = event_perso(s_game, s_memory);
         draw_sprite_map(s_game);
         if (sfKeyboard_isKeyPressed(sfKeyEscape))
             s_game.check_pause = 1;
@@ -60,6 +60,5 @@ void map(t_window s_window)
         s_game = move_memory(s_game);
         draw_sprite_memory(s_memory);
         s_memory = move_memory_others(s_memory);
-
     }
 }

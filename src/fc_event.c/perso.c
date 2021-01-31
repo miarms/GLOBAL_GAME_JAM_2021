@@ -22,7 +22,7 @@ t_game jump_perso(t_game s_game)
     return (s_game);
 }
 
-t_game collision_memory(t_game s_game)
+t_game collision_memory(t_game s_game, t_memory s_memory)
 {
     if ((s_game.posperso.x + 40 >= s_game.poshappy.x && s_game.posperso.x <= s_game.poshappy.x + 50) && \
     (s_game.posperso.y >= s_game.poshappy.y && s_game.posperso.y <= s_game.poshappy.y + 30)) {
@@ -31,13 +31,38 @@ t_game collision_memory(t_game s_game)
     (s_game.posperso.y >= s_game.possad.y && s_game.posperso.y <= s_game.possad.y + 30)) {
         s_game.check_halo = -1;
     }
+
+    if ((s_game.posperso.x + 40 >= s_memory.poshappy1.x && s_game.posperso.x <= s_memory.poshappy1.x + 50) && \
+    (s_game.posperso.y >= s_memory.poshappy1.y && s_game.posperso.y <= s_memory.poshappy1.y + 30)) {
+        s_game.check_halo = 1;
+    } else if ((s_game.posperso.x + 40 >= s_memory.possad1.x - 30 && s_game.posperso.x <= s_memory.possad1.x + 10) && \
+    (s_game.posperso.y >= s_memory.possad1.y && s_game.posperso.y <= s_memory.possad1.y + 30)) {
+        s_game.check_halo = -1;
+    }
+    //HAPPY 1 & SAD 1
+    if ((s_game.posperso.x + 40 >= s_memory.poshappy1.x && s_game.posperso.x <= s_memory.poshappy1.x + 50) && \
+    (s_game.posperso.y >= s_memory.poshappy1.y && s_game.posperso.y <= s_memory.poshappy1.y + 30)) {
+        s_game.check_halo = 1;
+    } else if ((s_game.posperso.x + 40 >= s_memory.possad1.x - 30 && s_game.posperso.x <= s_memory.possad1.x + 10) && \
+    (s_game.posperso.y >= s_memory.possad1.y && s_game.posperso.y <= s_memory.possad1.y + 30)) {
+        s_game.check_halo = -1;
+    }
+
+    //HAPPY 2 & SAD2
+    if ((s_game.posperso.x + 40 >= s_memory.poshappy1.x && s_game.posperso.x <= s_memory.poshappy1.x + 50) && \
+    (s_game.posperso.y >= s_memory.poshappy1.y && s_game.posperso.y <= s_memory.poshappy1.y + 30)) {
+        s_game.check_halo = 1;
+    } else if ((s_game.posperso.x + 40 >= s_memory.possad1.x - 30 && s_game.posperso.x <= s_memory.possad1.x + 10) && \
+    (s_game.posperso.y >= s_memory.possad1.y && s_game.posperso.y <= s_memory.possad1.y + 30)) {
+        s_game.check_halo = -1;
+    }
     return (s_game);
 }
 
-t_game event_perso(t_game s_game)
+t_game event_perso(t_game s_game, t_memory s_memory)
 {
     s_game = jump_perso(s_game);
-    s_game = collision_memory(s_game);
+    s_game = collision_memory(s_game, s_memory);
 
     return (s_game);
 }
