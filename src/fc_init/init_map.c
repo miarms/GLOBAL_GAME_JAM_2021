@@ -14,6 +14,9 @@ t_game init_sprite_map(t_game s_game)
     s_game.s_sol = sfSprite_create();
     //PERSO
     s_game.sperso = sfSprite_create();
+    //HALO
+    s_game.s_halo_blue = sfSprite_create();
+    s_game.s_halo_orange = sfSprite_create();
     //MEMORY
     s_game.shappy = sfSprite_create();
     s_game.ssad = sfSprite_create();
@@ -39,6 +42,12 @@ t_game init_texture_map(t_game s_game)
     //PERSO
     s_game.tperso = sfTexture_createFromFile("ressources/img/map/perso.png", NULL);
     sfSprite_setTexture(s_game.sperso, s_game.tperso, sfTrue);
+    //HALO
+    s_game.t_halo_blue = sfTexture_createFromFile("ressources/img/map/halo_blue.png", NULL);
+    sfSprite_setTexture(s_game.s_halo_blue, s_game.t_halo_blue, sfTrue);
+    s_game.t_halo_orange = sfTexture_createFromFile("ressources/img/map/halo_orange.png", NULL);
+    sfSprite_setTexture(s_game.s_halo_orange, s_game.t_halo_orange, sfTrue);
+
     //MEMORY
     s_game.thappy = sfTexture_createFromFile("ressources/img/map/happy.png", NULL);
     sfSprite_setTexture(s_game.shappy, s_game.thappy, sfTrue);
@@ -69,6 +78,11 @@ t_game init_pos_map(t_game s_game)
     //PERSO
     s_game.posperso = fc_pos(60,700);
     sfSprite_setPosition(s_game.sperso, s_game.posperso);
+    //HALO
+    s_game.pos_halo_blue = fc_pos(s_game.posperso.x, s_game.posperso.y);
+    sfSprite_setPosition(s_game.s_halo_blue, s_game.pos_halo_blue);
+    s_game.pos_halo_orange = fc_pos(s_game.posperso.x, s_game.posperso.y);
+    sfSprite_setPosition(s_game.s_halo_orange, s_game.pos_halo_orange);
     //MEMORY
     s_game.poshappy = fc_pos(1600,615);
     sfSprite_setPosition(s_game.shappy, s_game.poshappy);
@@ -93,9 +107,15 @@ void draw_sprite_map(t_game s_game)
         sfRenderWindow_drawSprite(s_game.window, s_game.s_ciel, NULL);
         sfRenderWindow_drawSprite(s_game.window, s_game.s_batiment, NULL);
         sfRenderWindow_drawSprite(s_game.window, s_game.s_sol, NULL);
+        if (s_game.check_halo == 1) {
+            sfRenderWindow_drawSprite(s_game.window, s_game.s_halo_orange, NULL);
+        } else if (s_game.check_halo == -1) {
+            sfRenderWindow_drawSprite(s_game.window, s_game.s_halo_blue, NULL);
+        }
         sfRenderWindow_drawSprite(s_game.window, s_game.sperso, NULL);
         sfRenderWindow_drawSprite(s_game.window, s_game.shappy, NULL);
         sfRenderWindow_drawSprite(s_game.window, s_game.ssad, NULL);
+        
 
     } else if (s_game.check_pause == 1) {
         sfRenderWindow_clear(s_game.window, sfBlack);
@@ -129,6 +149,7 @@ t_game init_map(t_game s_game, t_window s_window)
     s_game.clock_jump = sfClock_create();
     s_game.ct_jump = 1;
 
+    s_game.check_halo = 0;
     s_game.check_pause = 0;
     s_game.window = s_window.window;
     s_game.posmouse = s_window.posmouse;

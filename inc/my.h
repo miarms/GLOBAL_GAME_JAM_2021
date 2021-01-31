@@ -103,6 +103,14 @@ typedef struct s_game {
     sfTime time_jump;
     float second_jump;
     int ct_jump;
+    //PERSO HALO
+    int check_halo;
+    sfSprite *s_halo_blue;
+    sfTexture *t_halo_blue;
+    sfVector2f pos_halo_blue;
+    sfSprite *s_halo_orange;
+    sfTexture *t_halo_orange;
+    sfVector2f pos_halo_orange;
     //MEMORY
     sfSprite *shappy;
     sfTexture *thappy;
@@ -197,7 +205,9 @@ void draw_sprite_map(t_game sgame);
 t_game init_rect_map(t_game s_game);
 void map(t_window s_window);
 t_game init_clock_perso(t_game s_game);
+t_game event_perso(t_game s_game);
 t_game jump_perso(t_game s_game);
+t_game collision_memory(t_game s_game);
 t_game get_mouse_map(t_game s_game);
 t_game move_rect_map(t_game s_game);
 t_game move_background(t_game s_game);
