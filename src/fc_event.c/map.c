@@ -7,15 +7,29 @@
 
 #include "../../inc/my.h"
 
+t_game end_compare(t_game s_game)
+{
+    if (s_game.happy_moment > s_game.sad_moment)
+        printf("Happy > Sad");
+    if (s_game.happy_moment < s_game.sad_moment)
+        printf("Sad > Happy");
+    if (s_game.sad_moment == s_game.happy_moment)
+        printf("Happy == Sad");
+    if (s_game.sad_moment == 0 && s_game.happy_moment == 0)
+        printf("You've catch 0 memory");
+    return (s_game);
+}
+
 t_game move_background(t_game s_game)
 {
     if (s_game.check_pause == 0) {
         s_game.pos_batiment.x = s_game.pos_batiment.x - 0.1;
         sfSprite_setPosition(s_game.s_batiment, s_game.pos_batiment);
-        s_game.pos_sol.x = s_game.pos_sol.x - 0.3;
+        s_game.pos_sol.x = s_game.pos_sol.x - 1;
         sfSprite_setPosition(s_game.s_sol, s_game.pos_sol);
+        if (s_game.pos_sol.x < -1600)
+            end_compare(s_game);
     }
-
     return (s_game);
 }
 
@@ -42,6 +56,10 @@ void map(t_window s_window)
 {
     t_game s_game = init_map(s_game, s_window);
     t_memory s_memory = init_memory(s_memory, s_window);
+    
+    s_game.count_moment_happy = 0;
+    s_game.happy_moment = 0;
+    s_game.sad_moment = 0;
     while (sfRenderWindow_isOpen(s_game.window)) {
         s_game = get_mouse_map(s_game); 
         //s_game = init_clock_map(s_game);

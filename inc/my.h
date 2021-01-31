@@ -120,6 +120,11 @@ typedef struct s_game {
     sfTexture *tsad;
     sfVector2f possad;
     sfIntRect rect_sad;
+    int happy_moment;
+    int sad_moment;
+    int count_moment_happy;
+    int count_moment_sad;
+
     //PAUSE
     int check_pause;
     sfSprite *s_pause;
@@ -216,6 +221,7 @@ t_game click_pause(t_game s_game);
 t_game click_pause_play(t_game s_game);
 t_game click_pause_quit(t_game s_game);
 t_game click_pause_replay(t_game s_game);
+t_game end_compare(t_game s_game);
 /*MEMORY*/
 t_memory init_sprite_memory(t_memory s_memory);
 t_memory init_texture_memory(t_memory s_memory);
